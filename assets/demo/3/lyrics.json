@@ -1,0 +1,185 @@
+{
+  "id": "chartecho10-1",
+  "title": "Soft Evidence",
+  "lyrics": "[verse]\nYou left a spoon inside my coat\nA folded list of things to buy\nNo grand confession, just a note\nTo get the bread before it's dry\nYou never called it anything\nYou kept your shoes beside the stairs\nBut every ordinary thing\nWas proof that you were there\n\n[chorus]\nSoft evidence, all over the room\nThe second cup, the borrowed perfume\nYou say we never made a promise\nLook at the life we built around it\nSoft evidence, easy to miss\nA thousand days that looked like this\nI don't need a witness to defend it\nYou were here, and I remember it\n\n[verse]\nThe photograph was never clear\nYour shoulder moving out of frame\nI kept the picture anyway\nSome things don't need a perfect name\n\n[bridge]\nYou can have the ending\nYou can change the story too\nBut don't erase the mornings\nI was making room for you\n\n[chorus]\nSoft evidence, all over the room\nThe second cup, the borrowed perfume\nYou say we never made a promise\nLook at the life we built around it\nSoft evidence, easy to miss\nA thousand days that looked like this\nI don't need a witness to defend it\nYou were here, and I remember it\n\n[outro]\nI put the spoon back in the drawer\nAnd leave your story at the door",
+  "timedLyrics": [
+    {
+      "start": 16.36,
+      "end": 21.12,
+      "text": "You left a spoon inside my coat"
+    },
+    {
+      "start": 21.12,
+      "end": 25.62,
+      "text": "A folded list of things to buy"
+    },
+    {
+      "start": 25.62,
+      "end": 30.2,
+      "text": "No grand confession, just a note"
+    },
+    {
+      "start": 30.2,
+      "end": 34.76,
+      "text": "To get the bread before it's dry"
+    },
+    {
+      "start": 34.76,
+      "end": 38.86,
+      "text": "You never called it anything"
+    },
+    {
+      "start": 38.86,
+      "end": 44.04,
+      "text": "You kept your shoes beside the stairs"
+    },
+    {
+      "start": 44.62,
+      "end": 48.44,
+      "text": "But every ordinary thing"
+    },
+    {
+      "start": 48.44,
+      "end": 53.06,
+      "text": "Was proof that you were there"
+    },
+    {
+      "start": 55.2,
+      "end": 59.42,
+      "text": "Soft evidence, all over the room"
+    },
+    {
+      "start": 59.42,
+      "end": 63.54,
+      "text": "The second cup, the borrowed perfume"
+    },
+    {
+      "start": 64.96,
+      "end": 68.4,
+      "text": "You say we never made a promise"
+    },
+    {
+      "start": 68.4,
+      "end": 73.38,
+      "text": "Look at the life we built around it"
+    },
+    {
+      "start": 73.94,
+      "end": 77.72,
+      "text": "Soft evidence, easy to miss"
+    },
+    {
+      "start": 77.72,
+      "end": 81.78,
+      "text": "A thousand days that looked like this"
+    },
+    {
+      "start": 81.78,
+      "end": 86.74,
+      "text": "I don't need a witness to defend it"
+    },
+    {
+      "start": 86.74,
+      "end": 92.14,
+      "text": "You were here, and I remember it"
+    },
+    {
+      "start": 107.52,
+      "end": 112.44,
+      "text": "The photograph was never clear"
+    },
+    {
+      "start": 112.44,
+      "end": 117.1,
+      "text": "Your shoulder moving out of frame"
+    },
+    {
+      "start": 117.1,
+      "end": 121.26,
+      "text": "I kept the picture anyway"
+    },
+    {
+      "start": 121.26,
+      "end": 126.18,
+      "text": "Some things don't need a perfect name"
+    },
+    {
+      "start": 126.18,
+      "end": 131.16,
+      "text": "You can have the ending"
+    },
+    {
+      "start": 131.16,
+      "end": 136.44,
+      "text": "You can change the story too"
+    },
+    {
+      "start": 136.44,
+      "end": 140.38,
+      "text": "But don't erase the mornings"
+    },
+    {
+      "start": 141.26,
+      "end": 145.94,
+      "text": "I was making room for you"
+    },
+    {
+      "start": 151.26,
+      "end": 155.3,
+      "text": "Soft evidence, all over the room"
+    },
+    {
+      "start": 155.3,
+      "end": 159.56,
+      "text": "The second cup, the borrowed perfume"
+    },
+    {
+      "start": 160.96,
+      "end": 164.38,
+      "text": "You say we never made a promise"
+    },
+    {
+      "start": 164.38,
+      "end": 169.38,
+      "text": "Look at the life we built around it"
+    },
+    {
+      "start": 169.84,
+      "end": 173.68,
+      "text": "Soft evidence, easy to miss"
+    },
+    {
+      "start": 173.68,
+      "end": 177.7,
+      "text": "A thousand days that looked like this"
+    },
+    {
+      "start": 177.7,
+      "end": 182.8,
+      "text": "I don't need a witness to defend it"
+    },
+    {
+      "start": 182.8,
+      "end": 188.2,
+      "text": "You were here, and I remember it"
+    },
+    {
+      "start": 195.32,
+      "end": 199.36,
+      "text": "I put the spoon back in the drawer"
+    },
+    {
+      "start": 199.36,
+      "end": 204.32,
+      "text": "And leave your story at the door"
+    }
+  ],
+  "unmatchedLyrics": [],
+  "lyricTiming": {
+    "method": "large-v3 word timestamps aligned to original lyrics",
+    "review": "User confirmed preserving original text; automatic word alignment, no full manual listening",
+    "source": "workspace/chart_echoes_20261024/chartecho10-1_alignment_review.json"
+  },
+  "schemaVersion": 1,
+  "audio": "soft_evidence_final.mp3"
+}

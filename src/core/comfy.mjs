@@ -1,0 +1,24 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {spawn} from 'node:child_process';
+import {uid,writeJSON} from './store.mjs';
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+export class Comfy {
+ constructor(settings,root=null){this.settings=settings;this.child=null;this.root=root;}
+ async request(route,body){const url=new URL(this.settings().comfy.url);if(!['127.0.0.1','localhost','[::1]'].includes(url.hostname)||url.protocol!=='http:')throw Error('Only local ComfyUI is supported');const r=await fetch(url.origin+route,{method:body===undefined?'GET':'POST',headers:{'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body),signal:AbortSignal.timeout(30000)});if(!r.ok){const error=Error('ComfyUI '+r.status+': '+(await r.text()).slice(0,400));error.status=r.status;throw error;}const raw=await r.text();return raw?JSON.parse(raw):{};}
+ async ensure(){try{await this.request('/system_stats');return {running:true,owned:!!this.child};}catch(e){const s=this.settings().comfy;if(!s.managed)throw Error('请在设置连接本地 ComfyUI，或配置软件专用运行包 / Configure a local ComfyUI runtime');if(this.child)throw Error('ComfyUI is still starting');if(!fs.existsSync(s.python)||!fs.existsSync(s.main))throw Error('ComfyUI runtime not installed');const port=new URL(s.url).port||'8188';const logRoot=this.root?path.join(this.root,'cache/service'):null;if(logRoot)fs.mkdirSync(logRoot,{recursive:true});const out=logRoot?fs.openSync(path.join(logRoot,'comfy.log'),'a'):null;const cache=this.root?{HF_HOME:path.join(this.root,'cache/huggingface'),TORCH_HOME:path.join(this.root,'cache/torch'),XDG_CACHE_HOME:path.join(this.root,'cache')}:{};this.child=spawn(s.python,[s.main,'--listen','127.0.0.1','--port',port,'--disable-auto-launch',...(s.fastProfile?['--reserve-vram','3.5','--vram-headroom','1','--fast','fp16_accumulation']:[])],{cwd:path.dirname(s.main),windowsHide:true,stdio:out===null?'ignore':['ignore',out,out],env:{...process.env,...cache}});if(out!==null)fs.closeSync(out);this.child.on('exit',()=>this.child=null);this.child.on('error',()=>this.child=null);for(let i=0;i<60;i++){await sleep(1000);try{await this.request('/system_stats');return {running:true,owned:true};}catch{}}throw Error('ComfyUI startup timed out');}}
+ async idle(){const q=await this.request('/queue');return !q.queue_running?.length&&!q.queue_pending?.length;}
+ async release(){if(!(await this.idle()))throw Error('ComfyUI busy: deferred model release');await this.request('/free',{unload_models:true,free_memory:true});}
+ async execute(graph,jobDir,record,persist){
+   await this.ensure();fs.mkdirSync(jobDir,{recursive:true});writeJSON(path.join(jobDir,'request.json'),graph);
+   if(record.uncertain){const q=await this.request('/queue'),history=await this.request('/history?max_items=100');const pending=[...(q.queue_running||[]),...(q.queue_pending||[])].find(p=>p[3]?.zow_token===record.token);const finished=Object.entries(history).find(([,h])=>h.prompt?.[3]?.zow_token===record.token);if(pending||finished){record.promptId=pending?.[1]||finished[0];record.uncertain=false;persist();}else throw Error('提交结果不明确，请检查服务记录后再重试 / Submission needs reconciliation');}
+   if(!record.promptId){
+     const token=record.token||uid();record.token=token;record.uncertain=true;persist();
+     try{const result=await this.request('/prompt',{prompt:graph,client_id:'zow',extra_data:{zow_token:token}});if(!result.prompt_id)throw Error('No prompt ID');record.promptId=result.prompt_id;record.uncertain=false;persist();}catch(e){if(e.status>=400&&e.status<500){record.uncertain=false;persist();throw e;}throw Error('提交状态待确认，已停止自动重发：'+e.message);}
+   }
+   const deadline=Date.now()+3600000;
+   while(Date.now()<deadline){const h=await this.request('/history/'+encodeURIComponent(record.promptId));if(h[record.promptId]){const result=h[record.promptId];writeJSON(path.join(jobDir,'history.json'),result);if(result.status?.status_str!=='success')throw Error('Generation failed; see task history');const files=[];const walk=v=>{if(Array.isArray(v))v.forEach(walk);else if(v&&typeof v==='object'){if(v.filename&&v.type==='output'&&typeof v.subfolder==='string')files.push(v);else Object.values(v).forEach(walk);}};walk(result.outputs);return files;}await sleep(1800);}throw Error('Generation timed out; retry resumes the same prompt');
+ }
+ async download(file,dest){const params=new URLSearchParams({filename:file.filename,subfolder:file.subfolder,type:file.type});const r=await fetch(new URL(this.settings().comfy.url).origin+'/view?'+params,{signal:AbortSignal.timeout(180000)});if(!r.ok)throw Error('Download failed');fs.writeFileSync(dest,Buffer.from(await r.arrayBuffer()));if(!fs.statSync(dest).size)throw Error('Empty output');return dest;}
+ stop(){if(this.child){this.child.kill();this.child=null;}}
+}

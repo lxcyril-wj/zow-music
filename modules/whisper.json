@@ -1,0 +1,9 @@
+{
+  "apiVersion": 1,
+  "id": "whisper",
+  "kind": "asr",
+  "name": "Whisper large-v3",
+  "version": "1.0.1",
+  "adapter": "python",
+  "script": "workers/timing_v1_0_1.py"
+}

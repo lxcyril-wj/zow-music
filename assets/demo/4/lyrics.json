@@ -1,0 +1,185 @@
+{
+  "id": "chartecho10-2",
+  "title": "Last Exit Diner",
+  "lyrics": "[verse]\nThe waitress knows my order now\nTwo eggs and coffee, nothing sweet\nI've been driving west all evening\nWith your goodbye on repeat\nA truck is idling by the pumps\nThe radio is losing range\nI thought I'd need a different life\nTurns out I need some change\n\n[chorus]\nAt the last exit diner\nI'm taking my time\nThe road keeps getting wider\nWhen your hand isn't on mine\nLet the whole town wonder\nLet the old phone ring\nAt the last exit diner\nI don't owe you anything\n\n[verse]\nYou loved the way I stayed behind\nYou called it keeping both feet down\nI found a pair of better reasons\nOn the highway out of town\n\n[bridge]\nI won't make you the villain\nI won't make me the saint\nI'm just tired of standing still\nAnd calling it a place\n\n[chorus]\nAt the last exit diner\nI'm taking my time\nThe road keeps getting wider\nWhen your hand isn't on mine\nLet the whole town wonder\nLet the old phone ring\nAt the last exit diner\nI don't owe you anything\n\n[outro]\nThe waitress brings my change in quarters\nI leave a little more than I ought to",
+  "timedLyrics": [
+    {
+      "start": 17.06,
+      "end": 21.18,
+      "text": "The waitress knows my order now"
+    },
+    {
+      "start": 21.42,
+      "end": 23.98,
+      "text": "Two eggs and coffee, nothing sweet"
+    },
+    {
+      "start": 25.42,
+      "end": 29.6,
+      "text": "I've been driving west all evening"
+    },
+    {
+      "start": 29.6,
+      "end": 32.46,
+      "text": "With your goodbye on repeat"
+    },
+    {
+      "start": 32.98,
+      "end": 37.6,
+      "text": "A truck is idling by the pumps"
+    },
+    {
+      "start": 37.92,
+      "end": 41.52,
+      "text": "The radio is losing range"
+    },
+    {
+      "start": 41.68,
+      "end": 45.22,
+      "text": "I thought I'd need a different life"
+    },
+    {
+      "start": 45.52,
+      "end": 48.68,
+      "text": "Turns out I need some change"
+    },
+    {
+      "start": 48.68,
+      "end": 53.32,
+      "text": "At the last exit diner"
+    },
+    {
+      "start": 53.34,
+      "end": 56.9,
+      "text": "I'm taking my time"
+    },
+    {
+      "start": 57.24,
+      "end": 60.94,
+      "text": "The road keeps getting wider"
+    },
+    {
+      "start": 60.94,
+      "end": 64.9,
+      "text": "When your hand isn't on mine"
+    },
+    {
+      "start": 65.72,
+      "end": 69.38,
+      "text": "Let the whole town wonder"
+    },
+    {
+      "start": 69.82,
+      "end": 73.08,
+      "text": "Let the old phone ring"
+    },
+    {
+      "start": 73.08,
+      "end": 77.74,
+      "text": "At the last exit diner"
+    },
+    {
+      "start": 77.76,
+      "end": 81.58,
+      "text": "I don't owe you anything"
+    },
+    {
+      "start": 89.16,
+      "end": 94.24,
+      "text": "You loved the way I stayed behind"
+    },
+    {
+      "start": 94.34,
+      "end": 97.52,
+      "text": "You called it keeping both feet down"
+    },
+    {
+      "start": 97.52,
+      "end": 102.68,
+      "text": "I found a pair of better reasons"
+    },
+    {
+      "start": 102.68,
+      "end": 105.6,
+      "text": "On the highway out of town"
+    },
+    {
+      "start": 107.16,
+      "end": 110.06,
+      "text": "I won't make you the villain"
+    },
+    {
+      "start": 111.2,
+      "end": 113.74,
+      "text": "I won't make me the saint"
+    },
+    {
+      "start": 115.36,
+      "end": 118.72,
+      "text": "I'm just tired of standing still"
+    },
+    {
+      "start": 118.72,
+      "end": 121.94,
+      "text": "And calling it a place"
+    },
+    {
+      "start": 122.88,
+      "end": 126.4,
+      "text": "At the last exit diner"
+    },
+    {
+      "start": 126.4,
+      "end": 130.06,
+      "text": "I'm taking my time"
+    },
+    {
+      "start": 130.6,
+      "end": 134.02,
+      "text": "The road keeps getting wider"
+    },
+    {
+      "start": 134.54,
+      "end": 138.2,
+      "text": "When your hand isn't on mine"
+    },
+    {
+      "start": 138.2,
+      "end": 142.6,
+      "text": "Let the whole town wonder"
+    },
+    {
+      "start": 142.6,
+      "end": 146.32,
+      "text": "Let the old phone ring"
+    },
+    {
+      "start": 146.86,
+      "end": 150.78,
+      "text": "At the last exit diner"
+    },
+    {
+      "start": 150.78,
+      "end": 154.56,
+      "text": "I don't owe you anything"
+    },
+    {
+      "start": 172.86,
+      "end": 175.4,
+      "text": "The waitress brings my change in quarters"
+    },
+    {
+      "start": 177.92,
+      "end": 180.3,
+      "text": "I leave a little more than I ought to"
+    }
+  ],
+  "unmatchedLyrics": [],
+  "lyricTiming": {
+    "method": "large-v3 word timestamps aligned to original lyrics",
+    "review": "User confirmed preserving original text; automatic word alignment, no full manual listening",
+    "source": "workspace/chart_echoes_20261024/chartecho10-2_alignment_review.json"
+  },
+  "schemaVersion": 1,
+  "audio": "last_exit_diner_final.mp3"
+}

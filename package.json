@@ -1,0 +1,62 @@
+{
+  "name": "zow-music",
+  "productName": "ZOW 燥作",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ZOW — Your personal AI music radio",
+  "author": "ZOW",
+  "type": "module",
+  "main": "src/desktop/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.mjs",
+    "build:dir": "electron-builder --win --dir",
+    "build": "electron-builder --win --dir",
+    "release:zip": "electron-builder --win zip"
+  },
+  "dependencies": {
+    "music-metadata": "12.2.3",
+    "@earendil-works/pi-ai": "1.4.0"
+  },
+  "devDependencies": {
+    "electron": "45.0.0",
+    "electron-builder": "26.18.0",
+    "playwright": "1.56.1"
+  },
+  "build": {
+    "appId": "com.zow.music",
+    "productName": "ZOW",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "modules/**/*",
+      "assets/**/*",
+      "package.json",
+      "LICENSE",
+      "README.md",
+      "!modules/**/__pycache__/**",
+      "!Data/**/*",
+      "!data/**/*"
+    ],
+    "asarUnpack": [
+      "modules/**/*",
+      "assets/runtime/**/*"
+    ],
+    "win": {
+      "target": [
+        "zip"
+      ],
+      "artifactName": "ZOW-0.1.0-Windows-x64.zip",
+      "signAndEditExecutable": true,
+      "icon": "assets/icon.ico"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lxcyril-wj/zow-music.git"
+  },
+  "homepage": "https://zowai.cn/",
+  "license": "MIT"
+}

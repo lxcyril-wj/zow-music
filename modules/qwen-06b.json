@@ -1,0 +1,9 @@
+{
+  "apiVersion": 1,
+  "id": "qwen-06b",
+  "kind": "align",
+  "name": "Qwen3 ForcedAligner 0.6B",
+  "version": "1.0.1",
+  "adapter": "python",
+  "script": "workers/timing_v1_0_1.py"
+}

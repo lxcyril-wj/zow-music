@@ -1,0 +1,12 @@
+node_modules/
+/[Dd]ata/
+/desktop/
+dist/
+output/
+.env
+.env.*
+*.log
+__pycache__/
+*.pyc
+*.part
+Thumbs.db

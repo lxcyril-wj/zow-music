@@ -1,0 +1,171 @@
+{
+  "apiVersion": 1,
+  "id": "yue2-bf16",
+  "version": "1.0.0",
+  "kind": "music",
+  "name": "YuE2 BF16",
+  "adapter": "comfy",
+  "models": [
+    "yue2_3b_bf16.safetensors"
+  ],
+  "workflow": {
+    "1": {
+      "class_type": "CheckpointLoaderSimple",
+      "inputs": {
+        "ckpt_name": "yue2_3b_bf16.safetensors"
+      }
+    },
+    "2": {
+      "class_type": "YuE2GenerateMusic",
+      "inputs": {
+        "clip": [
+          "1",
+          1
+        ],
+        "style": "Mandarin Chinese acoustic pop, warm clear female vocal, gentle piano and acoustic guitar, 90 BPM, hopeful, studio recording",
+        "lyrics": "[verse]\n晚风轻轻吹过窗台\n星光落在你的肩膀\n把今天的心事放开\n明天还有新的阳光\n[chorus]\n向着有光的地方\n让梦想慢慢生长\n",
+        "abc": "",
+        "seed": 42,
+        "mode": "full",
+        "max_duration": 30,
+        "temperature": 1,
+        "top_p": 0.95,
+        "top_k": 100,
+        "repetition_penalty": 1.2,
+        "cfg_scale": 1.01
+      }
+    },
+    "3": {
+      "class_type": "ConditioningZeroOut",
+      "inputs": {
+        "conditioning": [
+          "2",
+          0
+        ]
+      }
+    },
+    "4": {
+      "class_type": "EmptyYuE2LatentAudio",
+      "inputs": {
+        "seconds": [
+          "2",
+          1
+        ],
+        "batch_size": 1
+      }
+    },
+    "5": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "seed": 42,
+        "steps": 32,
+        "cfg": 1,
+        "sampler_name": "dpm_2",
+        "scheduler": "sgm_uniform",
+        "positive": [
+          "2",
+          0
+        ],
+        "negative": [
+          "3",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "denoise": 1
+      }
+    },
+    "6": {
+      "class_type": "VAEDecodeAudio",
+      "inputs": {
+        "samples": [
+          "5",
+          0
+        ],
+        "vae": [
+          "1",
+          2
+        ]
+      }
+    },
+    "7": {
+      "class_type": "SaveAudio",
+      "inputs": {
+        "audio": [
+          "6",
+          0
+        ],
+        "filename_prefix": "audio/YuE2/smoke_test"
+      }
+    },
+    "8": {
+      "class_type": "SaveAudioMP3",
+      "inputs": {
+        "audio": [
+          "6",
+          0
+        ],
+        "filename_prefix": "audio/YuE2/smoke_test",
+        "quality": "320k"
+      }
+    }
+  },
+  "mapping": {
+    "lyrics": [
+      [
+        "2",
+        "lyrics"
+      ]
+    ],
+    "style": [
+      [
+        "2",
+        "style"
+      ]
+    ],
+    "seed": [
+      [
+        "2",
+        "seed"
+      ],
+      [
+        "5",
+        "seed"
+      ]
+    ],
+    "seconds": [
+      [
+        "2",
+        "max_duration"
+      ]
+    ],
+    "steps": [
+      [
+        "5",
+        "steps"
+      ]
+    ],
+    "abc": [
+      [
+        "2",
+        "abc"
+      ]
+    ],
+    "prefix": [
+      [
+        "7",
+        "filename_prefix"
+      ],
+      [
+        "8",
+        "filename_prefix"
+      ]
+    ]
+  }
+}

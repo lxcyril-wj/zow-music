@@ -1,0 +1,42 @@
+[
+  {
+    "title": "把想念调成静音",
+    "artist": "YuE2 × Codex",
+    "duration": 217,
+    "audio": "1/audio.mp3",
+    "cover": "1/cover.png",
+    "lyricsFile": "1/lyrics.json",
+    "sourceId": "cn-hits-20261024-01",
+    "sourcePath": "output/v37/cn-hits-20261024-01_final.mp3"
+  },
+  {
+    "title": "十八岁的单车",
+    "artist": "YuE2 × Codex",
+    "duration": 192,
+    "audio": "2/audio.mp3",
+    "cover": "2/cover.png",
+    "lyricsFile": "2/lyrics.json",
+    "sourceId": "retro80s-20261024-04",
+    "sourcePath": "output/v50/retro80s-20261024-04_final.mp3"
+  },
+  {
+    "title": "Soft Evidence",
+    "artist": "YuE2 × Codex",
+    "duration": 209,
+    "audio": "3/audio.mp3",
+    "cover": "3/cover.png",
+    "lyricsFile": "3/lyrics.json",
+    "sourceId": "chartecho10-1",
+    "sourcePath": "output/v22/soft_evidence_final.mp3"
+  },
+  {
+    "title": "Last Exit Diner",
+    "artist": "YuE2 × Codex",
+    "duration": 205,
+    "audio": "4/audio.mp3",
+    "cover": "4/cover.png",
+    "lyricsFile": "4/lyrics.json",
+    "sourceId": "chartecho10-2",
+    "sourcePath": "output/v23/last_exit_diner_final.mp3"
+  }
+]

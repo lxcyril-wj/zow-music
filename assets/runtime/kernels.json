@@ -1,0 +1,12 @@
+{
+  "file": "comfy_kitchen-0.2.37+spark.h3.sm89.cu130.1-cp312-abi3-win_amd64.whl",
+  "sha256": "76f2bbeeeb111b70666ac841279a0a006d931f439e617b95bd9a3dbab5731620",
+  "platform": "win32",
+  "capability": [
+    8,
+    9
+  ],
+  "license": "Apache-2.0",
+  "source": "https://github.com/Comfy-Org/comfy-kitchen",
+  "description": "Spark SM89 CUDA13 kernel build; license and notices are included inside the wheel."
+}
