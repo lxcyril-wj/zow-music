@@ -20,9 +20,24 @@ ZOW 是一款 Windows 桌面应用，把聊天创作、本地音乐生成和日�
 
 首版为 **0.1.0 预览版**。
 
-**[下载 Windows 完整便携版（夸克网盘）](https://pan.quark.cn/s/2dc19de39025)** · [版本发布说明](https://github.com/lxcyril-wj/zow-music/releases/tag/v0.1.0)
+**[国内下载 · 夸克网盘](https://pan.quark.cn/s/2dc19de39025)** · **[International Download · Google Drive](https://drive.google.com/drive/folders/1CLNK1zQEQJumRZnqNt4vs9yWR3GH5Slt?usp=sharing)**
+
+[版本发布说明 / Release notes](https://github.com/lxcyril-wj/zow-music/releases/tag/v0.1.0)
+
+> Google Drive 镜像上传中：目前仅能看到说明与校验文件，请等待 `.7z.001` 至 `.7z.005` 五个分卷全部上传后再下载。
+> The Google Drive mirror is being prepared. Please wait until all five archive volumes (`.7z.001`–`.7z.005`) are available.
 
 完整便携版包含独立运行环境与最小模型，无需安装。共 **5 个 7z 分卷，总计约 19.56GB**，前四卷各 4GiB，最后一卷较小；解压后约 24.31GB。请下载全部分卷到同一文件夹，保持文件名不变，用最新版 7-Zip 从 `ZOW-0.1.0-Windows-x64-Full.7z.001` 开始解压，再双击完整目录中的 `ZOW.exe`。网盘内附上传与解压说明、`SHA256SUMS.txt` 和模型校验记录。
+
+### International users — quick start
+
+1. Download all **five** archive volumes (`.7z.001` through `.7z.005`) individually into the same folder. Keep their original names; do not mix files from different versions.
+2. Use the latest 7-Zip to extract `ZOW-0.1.0-Windows-x64-Full.7z.001`. Allow at least **30GB of free space** for extraction.
+3. Open the extracted folder and double-click `ZOW.exe`. Keep the application files and its `Data` folder together.
+4. The interface starts in Chinese. Open **设置 (Settings)** and switch the language to **English**, then connect your own language-model provider under **模型与账号 (Models & accounts)**.
+5. Local music, artwork and lyric alignment models are included. No language-model service account or API key is included. Keep your own `Data` folder when updating.
+
+Windows x64 only. The bundled generation environment uses PyTorch 2.9.1 / CUDA 13 and has been tested on an RTX 4090 24GB; other GPUs have not been fully verified. YuE2 model weights retain their **CC BY-NC 4.0 non-commercial license**; the application's MIT license does not replace third-party licenses.
 
 GitHub 源码不包含用户数据、Python 环境或模型权重。
 
