@@ -4,9 +4,15 @@
 
 ZOW 是一款 Windows 桌面应用，把聊天创作、本地音乐生成和日常听歌放在同一个窗口里。说出心情、风格或今天发生的事，让 AI 规划歌曲；音频生成后立即入库播放，封面与歌词时间对齐在后台补全。
 
-[官网与作者介绍](https://zowai.cn/) · [问题反馈](https://github.com/lxcyril-wj/zow-music/issues)
+[官网与作者介绍](https://zowai.cn/) · [B 站使用教程](https://www.bilibili.com/video/BV15rHc6SE6o/) · [问题反馈](https://github.com/lxcyril-wj/zow-music/issues)
 
 ![ZOW 音乐库](docs/images/library.png)
+
+## 视频教程
+
+**[观看 ZOW 使用教学视频（Bilibili）](https://www.bilibili.com/video/BV15rHc6SE6o/)**
+
+第一次使用可以跟着作者录制的视频上手。Video tutorial in Chinese.
 
 ## 能做什么
 
